@@ -2,6 +2,24 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
 
+# Consigna
+
+Desarrollar en angular un ecommerce con las siguientes paginas:
+
+Home: Listado de 4 productos. 
+
+Detalle de producto: Al navegar a dicha pagina mostrar el detalle completo del producto
+
+Registro: Realizar maquetado y validaciones (no realizar guardado de datos)
+
+Login: Realizar maquetado y validaciones (no realizar guardado de datos)
+
+Los datos de los productos podran ser consultados a:
+
+API REST (desarrolladas de manera particular por cada alumno, no se evalúa en el curso)
+Mockup de datos con archivos json
+API REST publicas
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
