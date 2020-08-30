@@ -1,0 +1,16 @@
+.error {
+    background: red;
+    color: white;
+}
+
+.warning {
+    color: black;
+    background: yellow;
+}
+
+.inputForm{
+    width: 150px;
+    margin: 0px;
+    box-sizing: content-box;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,44 @@
+<form [formGroup]="myForm" (ngSubmit)="registro()">
+    <div>
+        <input placeholder="Ingrese su nombre" type="text" formControlName="name" [ngClass]="{error :myForm.get('name').errors && myForm.get('name').dirty, 
+        warning : myForm.get('name').hasError('minlength'), inputForm: true}">
+    </div>
+    <!-- Validacion -->
+    <div *ngIf="myForm.get('name').errors && myForm.get('name').dirty">
+        <p *ngIf="myForm.get('name').hasError('required')">el campo es obligatorio</p>
+        <p *ngIf="myForm.get('name').hasError('minlength')">debe tener al menos 4 caracteres</p>
+    </div>
+
+    <div>
+        <input placeholder="Ingrese su apellido" type="text" formControlName="lastname" [ngClass]="{error :myForm.get('lastname').errors && myForm.get('lastname').dirty, inputForm: true}">
+    </div>
+    <!-- Validacion -->
+    <div *ngIf="myForm.get('lastname').errors && myForm.get('lastname').dirty">
+        <p *ngIf="myForm.get('lastname').hasError('required')">el campo es obligatorio</p>         
+    </div>
+    
+    <div>
+        <input placeholder="Ingrese un email" type="email" formControlName="email"
+            [ngClass]="{inputForm: true, error :myForm.get('email').errors && myForm.get('email').dirty}"
+        >
+    </div>
+    <!-- Validacion -->
+    <div *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
+        <p *ngIf="myForm.get('email').hasError('required')">el campo es obligatorio</p>         
+        <p *ngIf="myForm.get('email').hasError('email')">debe ingresar un email valido</p>         
+    </div>
+    
+    <div>
+        <input placeholder="Ingrese una contraseña" type="password" formControlName="password"
+        [ngClass]="{inputForm: true, error :myForm.get('password').errors && myForm.get('password').dirty}"
+        >
+    </div>
+    <!-- Validacion -->
+    <div *ngIf="myForm.get('password').errors && myForm.get('password').dirty">
+        <p *ngIf="myForm.get('password').hasError('required')">el campo es obligatorio</p>
+        <p *ngIf="myForm.get('password').hasError('minlength')">debe tener al menos 6 caracteres</p>
+    </div>
+    <!-- <input  value="Registrarse" [disabled]="myForm.invalid"> -->
+    <button type="submit" mat-raised-button color="primary" [disabled]="myForm.invalid">Registrarse</button>
+
+</form>

@@ -1,0 +1,20 @@
+<!-- Renderizar todos los productos con el ngFor-->
+<!-- <div *ngFor="let producto of productos | async"> -->
+<div *ngFor="let item of producto">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{item.name | uppercase}}</mat-card-title>
+        </mat-card-header>
+        <img [ngClass]=" 'img-producto' " mat-card-image src={{item.photo_url}} alt="">
+        <mat-card-content>
+            <p>{{item.description}}</p>
+            <p>${{item.price}}</p>
+            <p>Unidades disponibles: {{item.stock}}</p>
+            <p><small>Vendidos: {{item.sales}}</small></p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Comprar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

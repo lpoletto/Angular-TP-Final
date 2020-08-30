@@ -1,0 +1,13 @@
+<h1>Ofertas de la semana</h1>
+<!-- Renderizar todos los productos con el ngFor-->
+<!-- <div *ngFor="let producto of productos | async"> -->
+<div *ngFor="let producto of productos">
+    <ul>
+        <li>{{producto.name | uppercase}}</li>
+        <li>${{producto.price}}</li>
+    </ul>
+    <button mat-raised-button color="primary" routerLink="/producto/{{producto.id}}">Ver más</button>
+</div>
+<!-- Llamamos al metodo a traves del evento click -->
+<!-- <button mat-raised-button color="primary" (click)="cambiarProductos()">Cambiar productos</button> -->
+  
